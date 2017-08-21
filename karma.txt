@@ -1,0 +1,26 @@
+npm install --save-dev jasmine-core lite-server concurrently
+npm install --save-dev typescript core-js @types/node @types/jasmine
+replace with-->  "scripts": {
+  "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
+  "test": "npm start",
+  "tsc": "tsc"
+},
+
+<script src="node_modules/jasmine-core/lib/jasmine-core/jasmine.js"></script>
+  <script src="node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
+  <script src="node_modules/jasmine-core/lib/jasmine-core/boot.js"></script>
+
+npm install --save-dev karma
+karma-cli
+karma-jasmine
+karma-chrome-launcher
+karma-jasmine-html-reporter
+npm install -g karma-cli
+
+make karma.conf.js and give the path of test class
+replace below two in package.json
+"test": "tsc && concurrently \"tsc -w\" \"karma start karma.conf.js\"",
+"test-once": "tsc && karma start karma.conf.js --single-run",
+
+npm run test
+
