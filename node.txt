@@ -36,7 +36,7 @@ An event is different as compared to the callback function. The former works on 
 In Node.js, the events are heavily used which make Node.js a pretty fast application as compared to the other similar technologies. As soon as the server is started by the
 Node, it initiates its variables, declares functions and then waits for the event to occur. There are multiple in-built event modules which are available in Node.js and
 through these event modules and the EventEmitter class that bind events, we can generate customized event-listeners.
-Node.js’s ‘events’ module is used to create an event, event handler, and event emitter. 
+Node.jsâ€™s â€˜eventsâ€™ module is used to create an event, event handler, and event emitter. 
 
 get example frm tutorialspoint
 
@@ -46,17 +46,17 @@ get example frm tutorialspoint
 -->HOW TO INCLUDE EXTERNAL LIBRARIES BY REQUIRING MODULES IN NODE.JS?
 In node.js, we use require keyword to include external libraries. For example,
 
-var http = require(‘http’);
+var http = require(â€˜httpâ€™);
 
 We can also include relative files as shown below:
 
-var myFile = require(‘./myFile’); // loads myFile.js
+var myFile = require(â€˜./myFileâ€™); // loads myFile.js
 
 To install modules from npm(node package manager),
 
 $ npm install express
 
-Modules aren’t automatically injected into the global scope, but instead you just assigned them to a variable of your choice.
+Modules arenâ€™t automatically injected into the global scope, but instead you just assigned them to a variable of your choice.
 so we have to create one instance of the particular module
 
 -->What happens if we call require() method to load same module multiple times in Node.js?
@@ -323,9 +323,9 @@ The difference between Node.js and Ajax is that, Ajax (short for Asynchronous Ja
 contents of the page without refreshing it. While,Node.js is Server Side Javascript, used for developing server software. Node.js does not execute in the browser 
 but by the server.
 
--->Q. What is ‘Callback’ in node.js?
+-->Q. What is â€˜Callbackâ€™ in node.js?
 Callback function is used in node.js to deal with multiple requests made to the server. Like if you have a large file which is going to take a long time for a 
-server to read and if you don’t want a server to get engage in reading that large file while dealing with other requests, call back function is used. Call back 
+server to read and if you donâ€™t want a server to get engage in reading that large file while dealing with other requests, call back function is used. Call back 
 function allows the server to deal with pending request first and call a function when it is finished
 
 -->CLUSTERS
@@ -334,3 +334,17 @@ https://www.sitepoint.com/how-to-create-a-node-js-cluster-for-speeding-up-your-a
 -->REDIS
 https://coligo.io/nodejs-api-redis-cache/
 https://www.sitepoint.com/using-redis-node-js/
+
+-->set NODE_ENV=development&& nodemon server.js
+
+https://www.twilio.com/blog/2017/08/working-with-environment-variables-in-node-js.html
+https://www.dynatrace.com/blog/the-drastic-effects-of-omitting-node_env-in-your-express-js-applications/
+https://devcenter.heroku.com/articles/node-best-practices
+Edit: Alright â€“ but how do I set NODE_ENV properly?
+I was asked that question on facebook after releasing this post and I agree that it really makes sense to cover that.
+
+NODE_ENV works like any other environment variable (e.g. PATH) and it depends on your platform how to set it:
+
+Linux and OSX: export NODE_ENV=production
+Windows: SET NODE_ENV=production
+On all platforms you can explicitly set it when starting your application like that: NODE_ENV=production node myapp.js. You may also use a module like dotenv to set it from an .env file in your application directory. That said, you should avoid setting the environment directly in your code because this contradicts the purpose of environment variables.
