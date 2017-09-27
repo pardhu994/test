@@ -348,3 +348,22 @@ NODE_ENV works like any other environment variable (e.g. PATH) and it depends on
 Linux and OSX: export NODE_ENV=production
 Windows: SET NODE_ENV=production
 On all platforms you can explicitly set it when starting your application like that: NODE_ENV=production node myapp.js. You may also use a module like dotenv to set it from an .env file in your application directory. That said, you should avoid setting the environment directly in your code because this contradicts the purpose of environment variables.
+
+https://stackoverflow.com/questions/34855352/how-in-general-does-node-js-handle-10-000-concurrent-requests
+https://stackoverflow.com/questions/39584439/does-node-js-support-parallelism
+----------------
+NODEJS BEST PRACTICES
+
+Start every new project with npm init
+By default, npm doesn’t save installed dependencies to package.json (and you should always track your dependencies!).
+
+If you use the --save flag to auto-update package.json, 
+So later if u will do npm install it will automatically add dependencies to package.json
+
+Cluster your app
+Since the node runtime is limited to a single CPU core and about 1.5 GB of memory, deploying a non-clustered node app on a large server is a huge waste of resources.
+To take advantage of multiple cores and memory beyond 1.5 GB, bake Cluster support into your app. Even if you’re only running a single process on small hardware today,
+ Cluster gives you easy flexibility for the future.
+
+-----------------------------
+http://nodewebapps.com/2017/01/03/13-security-best-practices-for-your-web-application/
