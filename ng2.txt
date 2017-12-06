@@ -1,7 +1,7 @@
 screen loader==>
 https://stackoverflow.com/questions/37069609/show-loading-screen-when-navigating-between-routes-in-angular-2?noredirect=1&lq=1
 
-Before I start discussion about sessions and the most frequent situations which occur in a process of development I want to underline some things. What is the HTTP session? What for it exist? I hope you know that HTTP is a stateless protocol, that’s mean that there is no permanent connection between a browser and server. And as the result server doesn’t know who is an initiator of a request, even if an application has just one user. The session is a tool for identifying of requests author. The previous sentence is rough enough, but it explains the main purpose of the sessions. Every user gets it own session with unique identifier when he visits site first time.
+Before I start discussion about sessions and the most frequent situations which occur in a process of development I want to underline some things. What is the HTTP session? What for it exist? I hope you know that HTTP is a stateless protocol, thatâ€™s mean that there is no permanent connection between a browser and server. And as the result server doesnâ€™t know who is an initiator of a request, even if an application has just one user. The session is a tool for identifying of requests author. The previous sentence is rough enough, but it explains the main purpose of the sessions. Every user gets it own session with unique identifier when he visits site first time.
 
 
 httpSession integration https://www.tuturself.com/posts/view?menuId=3&postId=1071
@@ -63,9 +63,27 @@ How would you optimize the angular 2 application for better performance?
 Well, optimization depends on the type and size of application and many other factors==>
 Consider AOT compilation.
 Make sure the application is bundled, uglified, and tree shaking is done.
-Make sure the application doesn’t have un-necessary import statements.
+Make sure the application doesnâ€™t have un-necessary import statements.
 Make sure that any 3rd party library, which is not used, is removed from the application.
 Have all dependencies and dev-dependencies are clearly separated.
 I would consider lazy loading instead of fully bundled app if the app size is more.
 
+routing -> http://www.webdevelopmenthelp.net/2016/12/angularjs2-interview-questions.html
+change detection ->https://angular-2-training-book.rangle.io/handout/change-detection/change_detector_classes.html
+http://www.code-sample.com/2016/06/angular-2-interview-questions-and.html
 
+MODULE VS COMPONENTS
+Components control views (html). They also communicate with other components and services to bring functionality to your app.
+Modules consist of one or more components. They do not control any html.  Your modules declare which component gets bootstrapped.
+Modules allow you to manage your components to bring modularity to your app.
+Lets say there is one main app Module name 'MyApp'. but further you divided your app into multiple components say.
+MovieComponent
+SongComponent (further divided into AudioComponent and VideoComponent)
+TrailerComponent
+All these Component developed and tested individually and integrated to our MyAppModule.
+In case anything happens in our Trailer part we can discard/test our TrailerComponent.
+So It is easy to maintain a large Applications.
+https://angular-2-training-book.rangle.io/handout/modules/introduction.html(ngModule also)
+
+DIRECTIVES
+https://www.codementor.io/christiannwamba/build-custom-directives-in-angular-2-jlqrk7dpw
