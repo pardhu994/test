@@ -9,3 +9,9 @@
 .mar-top-10{
     margin-top: 10px;
 }
+.text-success{
+    color:#008000;
+}
+.text-primary{
+    color:#000000 !important;
+}
