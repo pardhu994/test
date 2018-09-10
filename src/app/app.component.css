@@ -10,8 +10,30 @@
     margin-top: 10px;
 }
 .text-success{
-    color:#008000;
+    background-color:#008000;
+    height: 35px;
+    /* margin-left: 100px; */
+    /* padding: 20px; */
 }
 .text-primary{
-    color:#000000 !important;
+    background-color:#000000 !important;
 }
+
+table {
+    border-collapse: separate;
+    border-spacing: 4px;
+  }
+
+
+
+h3{
+    padding-left: 140px;
+    border: 1px solid rgb(255, 0, 0);
+}
+
+h2{
+    border: 5px solid blue;
+    padding-left: 625px;
+}
+
+  

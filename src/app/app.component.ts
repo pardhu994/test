@@ -19,9 +19,17 @@ export class AppComponent implements OnInit {
  dataSourcec2:any;
  dataSourcec3:any;
  dataSourcec4:any;
+
+ tbl1Name:any;
+ tbl2Name:any;
+ tbl3Name:any;
+ tbl4Name:any;
+applicationName:any;
+
 constructor(private http:HttpClient){}
   ngOnInit(){
     this.http.get('https://demo8472939.mockable.io/jsonDataoutput').subscribe(data=>this.statusData(data));
+    // console.log(this.statusData(data));
   
   this.dataSourcec1 = {
     "data": this.dataSourceC1
@@ -41,7 +49,12 @@ this.dataSourcec4 = {
 
   statusData(data){
       this.response=data;
-      console.log(this.response.component);
+      console.log(this.response);
+      this.applicationName=this.response.appName;
+     this.tbl1Name=this.response.component[0].id;
+     this.tbl2Name=this.response.component[1].id;
+     this.tbl3Name=this.response.component[2].id;
+     this.tbl4Name=this.response.component[3].id
 
 for(var i=0;i<this.response.component.length;i++){
     if(i==0)
