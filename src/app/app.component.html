@@ -1,189 +1,59 @@
+
 <div class="container-fluid">
-  <h2>{{applicationName}}</h2>
-  <div class="row mar-top-10">
-    <div class="col-sm-3">
-      <h3>{{tbl1Name}}</h3>
-      <table class="table table-hover">
+ <div class="row">
 
-        <tbody>
-          <tr>
-            <td *ngFor="let item of response.component[0].probes| slice:0:5" [ngClass]="{
-          'text-success':item.status === 1,
-          'text-primary':item.status=== 0}">
-            </td>
+    <div class="col-lg-6">
+        <h2>{{applicationName}}</h2>
+      <div class="row table_align">
+  <table class="table table-hover" *ngFor="let item of response.component">
+    <thead>
+      <tr>
+        {{item.id}}
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td *ngFor="let item of item.probes| slice:0:5" [ngClass]="{
+    'text-success':item.status === 1,
+    'text-primary':item.status=== 0}" matTooltip="{{item.name}}">
+        </td>
 
-          </tr>
-          <tr>
-            <td *ngFor="let item of response.component[0].probes| slice:5:10" [ngClass]="{
-          'text-success':item.status === 1,
-          'text-primary':item.status=== 0}"></td>
+      </tr>
+      <tr>
+        <td *ngFor="let item of item.probes| slice:5:10" [ngClass]="{
+    'text-success':item.status === 1,
+    'text-primary':item.status=== 0}"></td> 
 
-          </tr>
-          <tr>
-            <td *ngFor="let item of response.component[0].probes| slice:10:15" [ngClass]="{
-          'text-success':item.status === 1,
-          'text-primary':item.status=== 0}"></td>
+      </tr>
+      <tr>
+        <td *ngFor="let item of item.probes| slice:10:15" [ngClass]="{
+    'text-success':item.status === 1,
+    'text-primary':item.status=== 0}"></td>
 
-          </tr>
-          <tr>
-            <td *ngFor="let item of response.component[0].probes| slice:15:20" [ngClass]="{
-          'text-success':item.status === 1,
-          'text-primary':item.status=== 0}"></td>
+      </tr>
+      <tr>
+        <td *ngFor="let item of item.probes| slice:15:20" [ngClass]="{
+    'text-success':item.status === 1,
+    'text-primary':item.status=== 0}"></td>
 
-          </tr>
-          <tr>
-            <td *ngFor="let item of response.component[0].probes| slice:20:25" [ngClass]="{
-          'text-success':item.status === 1,
-          'text-primary':item.status=== 0}"></td>
+      </tr>
+      <tr>
+        <td *ngFor="let item of item.probes| slice:20:25" [ngClass]="{
+    'text-success':item.status === 1,
+    'text-primary':item.status=== 0}"></td>
 
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="col-sm-3">
-      <h3>{{tbl2Name}}</h3>
-      <table class="table table-hover">
-
-        <tbody>
-          <tr>
-            <td *ngFor="let item of response.component[1].probes| slice:0:5" [ngClass]="{
-          'text-success':item.status === 1,
-          'text-primary':item.status=== 0}"></td>
-
-          </tr>
-          <tr>
-            <td *ngFor="let item of response.component[1].probes| slice:5:10" [ngClass]="{
-          'text-success':item.status === 1,
-          'text-primary':item.status=== 0}"></td>
-
-          </tr>
-          <tr>
-            <td *ngFor="let item of response.component[1].probes| slice:10:15" [ngClass]="{
-          'text-success':item.status === 1,
-          'text-primary':item.status=== 0}"></td>
-
-          </tr>
-          <tr>
-            <td *ngFor="let item of response.component[1].probes| slice:15:20" [ngClass]="{
-          'text-success':item.status === 1,
-          'text-primary':item.status=== 0}"></td>
-
-          </tr>
-          <tr>
-            <td *ngFor="let item of response.component[1].probes| slice:20:25" [ngClass]="{
-          'text-success':item.status === 1,
-          'text-primary':item.status=== 0}"></td>
-
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="col-sm-3">
-      <h3>{{tbl1Name}}</h3>
-      <fusioncharts width="300" height="230" type="Column2d" [dataSource]="dataSourcec1">
-        </fusioncharts>
+      </tr>
+    </tbody>
+  </table>
+       
+      </div>
+      <input type="number" [(ngModel)]="itemNumber" name="itemNumber" ><button type="button" (click)="statusData();">ClickMe!</button>
+ 
     </div>
 
-    <div class="col-sm-3">
-      <h3>{{tbl2Name}}</h3>
-      <fusioncharts width="300" height="230" type="Column2d" [dataSource]="dataSourcec2">
+    <div class="col-lg-6">
+      <fusioncharts width="660" height="530" type="column3d" [dataSource]="dataSourcec1">
       </fusioncharts>
     </div>
   </div>
-
-
-  <div class="row mar-top-10">
-    <div class="col-sm-3">
-      <h3>{{tbl3Name}}</h3>
-      <table class="table table-hover">
-        <tbody>
-          <tr>
-            <td *ngFor="let item of response.component[2].probes| slice:0:5" [ngClass]="{
-          'text-success':item.status === 1,
-          'text-primary':item.status=== 0}"></td>
-
-          </tr>
-          <tr>
-            <td *ngFor="let item of response.component[2].probes| slice:5:10" [ngClass]="{
-          'text-success':item.status === 1,
-          'text-primary':item.status=== 0}"></td>
-
-          </tr>
-          <tr>
-            <td *ngFor="let item of response.component[2].probes| slice:10:15" [ngClass]="{
-          'text-success':item.status === 1,
-          'text-primary':item.status=== 0}"></td>
-
-          </tr>
-          <tr>
-            <td *ngFor="let item of response.component[2].probes| slice:15:20" [ngClass]="{
-          'text-success':item.status === 1,
-          'text-primary':item.status=== 0}"></td>
-
-          </tr>
-          <tr>
-            <td *ngFor="let item of response.component[2].probes| slice:20:25" [ngClass]="{
-          'text-success':item.status === 1,
-          'text-primary':item.status=== 0}"></td>
-
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="col-sm-3">
-      <h3>{{tbl4Name}}</h3>
-      <table class="table table-hover">
-        <tbody>
-          <tr>
-            <td *ngFor="let item of response.component[3].probes| slice:0:5" [ngClass]="{
-          'text-success':item.status === 1,
-          'text-primary':item.status=== 0}"></td>
-
-          </tr>
-          <tr>
-            <td *ngFor="let item of response.component[3].probes| slice:5:10" [ngClass]="{
-          'text-success':item.status === 1,
-          'text-primary':item.status=== 0}"></td>
-
-          </tr>
-          <tr>
-            <td *ngFor="let item of response.component[3].probes| slice:10:15" [ngClass]="{
-          'text-success':item.status === 1,
-          'text-primary':item.status=== 0}"></td>
-
-          </tr>
-          <tr>
-            <td *ngFor="let item of response.component[3].probes| slice:15:20" [ngClass]="{
-          'text-success':item.status === 1,
-          'text-primary':item.status=== 0}"></td>
-
-          </tr>
-          <tr>
-            <td *ngFor="let item of response.component[3].probes| slice:20:25" [ngClass]="{
-          'text-success':item.status === 1,
-          'text-primary':item.status=== 0}"></td>
-
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="col-sm-3">
-      <h3>{{tbl3Name}}</h3>
-      <fusioncharts width="300" height="230" type="Column2d" [dataSource]="dataSourcec3">
-      </fusioncharts>
-
-
-    </div>
-
-    <div class="col-sm-3">
-      <h3>{{tbl4Name}}</h3>
-      <fusioncharts width="300" height="230" type="Column2d" [dataSource]="dataSourcec4">
-      </fusioncharts>
-
-    </div>
-
-  </div>
-
-
-
 </div>

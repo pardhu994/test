@@ -6,19 +6,23 @@ import { FusionChartsModule } from 'angular-fusioncharts';
 import { NgForm } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-// Import FusionCharts library and chart modules
 import FusionCharts from 'fusioncharts/core';
-import Column2d from 'fusioncharts/viz/column2d';
-//import FusionTheme from 'fusioncharts/themes/es/fusioncharts.theme.fusion';
-//import PowerCharts from 'fusioncharts/powercharts';
-// Pass the fusioncharts library and chart modules
-FusionChartsModule.fcRoot(FusionCharts, Column2d);
+import column3d from 'fusioncharts/viz/column3d';
+import pie3d from 'fusioncharts/viz/pie3d';
+import Column2d from 'fusioncharts/viz/Column2d';
+FusionChartsModule.fcRoot(FusionCharts, column3d, pie3d, Column2d);
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import 'hammerjs';
+
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    BrowserAnimationsModule,
+    MatTooltipModule,
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
